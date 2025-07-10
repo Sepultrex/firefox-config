@@ -51,7 +51,7 @@
   display: none !important
 }
 
-/* URL bar icons 
+/* URL bar icons */
 #identity-permission-box,
 #star-button-box,
 #identity-icon-box,
@@ -61,7 +61,7 @@
 #translations-button
 {
   display: none !important
-}*/
+}
 
 /* "This time search with:..." */
 #urlbar .search-one-offs {
@@ -77,7 +77,7 @@
 
 /* Navbar size calc */
 :root{
---tab-border-radius: 1px !important; /*  Tab border radius -- Changes the tabs rounding  *//*  Default: 6px  */
+--tab-border-radius: 4px !important; /*  Tab border radius -- Changes the tabs rounding  *//*  Default: 6px  */
 --NavbarWidth: 50; /*  Default values: 36 - 43  */
 --TabsHeight: 30; /*  Minimum: 30  *//*  Default: 36  */
 --TabsBorder: 10; /*  Doesnt do anything on small layout  *//*  Default: 8  */
@@ -104,14 +104,14 @@
 {:root #nav-bar{padding: 0 5px 0 5px!important; height: calc(var(--NavbarHeightSmall) * 1px) !important} toolbarspring{display: none !important;} #TabsToolbar, #nav-bar{transition: margin-top .25s !important}}
 #nav-bar, #PersonalToolbar{background-color: #0000 !important;background-image: none !important; box-shadow: none !important} #nav-bar{margin-left: 3px;} .tab-background, .tab-stack { min-height: calc(var(--TabsHeight) * 1px) !important}
 
-/*  Removes urlbar border/background  */
+/*  Removes urlbar border/background  
 #urlbar-background {
   border: none !important;
   outline: none !important;
   transition: .15s !important;
-}
+}*/
 
-/*  Removes the background from the urlbar while not in use  
+/*  Removes the background from the urlbar while not in use 
 #urlbar:not(:hover):not([breakout][breakout-extend]) > #urlbar-background {
   box-shadow: none !important;
   background: #0000 !important;
@@ -176,4 +176,14 @@
   display: none !important;
 }
 
+/* url bar açıldığındaki uzunluk */
+.urlbarView{
+  position: fixed !important;
+  top: inherit;
+  left: 0 !important;
+  margin: var(--urlbar-container-height) 0 0 0 !important;
+  width: 50vw !important;
+  border-width: 1px 0;
+  background-color: var(--toolbar-field-focus-background-color, inherit);
+}
 
