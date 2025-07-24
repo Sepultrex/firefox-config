@@ -17,14 +17,16 @@ Speed up Firefox and get a cleaner look.
 
 * **`userChrome.css` preview**:
 
-* ![Firefox preview](./preview.png)
+* ![Firefox preview](https://i.imgur.com/uXXw1Su.jpeg)
+* ![Firefox preview](https://i.imgur.com/ORpElbD.png)
+
 
 
 ---
 
 ## ❓ How to Use
-1) **Download the repo** and **extract Firefox folder**.
+1) **Download the repo** and **extract firefox-config folder**.
 2) **Open Firefox**. In the **URL bar, type `about:profiles`** and press **Enter**.
 3) For the profile you want to use, **click Open Folder** in the **Root Directory** section.
 4) **Copy** the **`chrome` folder and** the **`user.js` file into** your **Firefox profile folder**.
-*(The user.js and the chrome folder are inside the extracted firefox folder. )*
+*(The user.js and the chrome folder are inside the extracted firefox-config folder. )*
