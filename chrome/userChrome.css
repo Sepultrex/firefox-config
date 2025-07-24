@@ -3,11 +3,11 @@
 *
 *  The theme Another Oneline uses code from
 *  👉 https://github.com/JarnotMaciej/Essence 👈 Thank you~~ 🤗
+    and
+   👉 https://github.com/datguypiko/Firefox-Mod-Blur 👈 Thank you~~ 🤗
 *
 *  Custom edits and fine-tuning by Sepultrex 
 */
-
-/* Just comment the lines or blocks for the elements you WANT to see */
 
 /* Menu button */
 #PanelUI-button {
@@ -20,35 +20,23 @@
 
 .titlebar-close,
 .titlebar-min {
-    width: 1px !important;
-    transition: 0 !important;
+  width: 1px !important;
+  transition: 0 !important;
 }
 
 .titlebar-max,
 .titlebar-restore {
-    display: none !important;
+  display: none !important;
 }
-
-/* Page back and foward buttons 
-#back-button,
-#forward-button
-{
-  display: none !important
-}*/
-
-/* Extensions button 
-#unified-extensions-button {
-  display: none !important
-}*/
 
 /* Extension name inside URL bar */
 #identity-box.extensionPage #identity-icon-label {
-  visibility: collapse !important
+  visibility: collapse !important;
 }
 
 /* All tabs (v-like) button */
 #alltabs-button {
-  display: none !important
+  display: none !important;
 }
 
 /* URL bar icons */
@@ -58,14 +46,13 @@
 #picture-in-picture-button,
 #tracking-protection-icon-container,
 #reader-mode-button,
-#translations-button
-{
-  display: none !important
+#translations-button {
+  display: none !important;
 }
 
 /* "This time search with:..." */
 #urlbar .search-one-offs {
-  display: none !important
+  display: none !important;
 }
 
 /* Space before and after tabs */
@@ -76,12 +63,23 @@
 /* --- ~END~ element visibility section --- */
 
 /* Navbar size calc */
-:root{
---tab-border-radius: 4px !important; /*  Tab border radius -- Changes the tabs rounding  *//*  Default: 6px  */
---NavbarWidth: 50; /*  Default values: 36 - 43  */
---TabsHeight: 30; /*  Minimum: 30  *//*  Default: 36  */
---TabsBorder: 10; /*  Doesnt do anything on small layout  *//*  Default: 8  */
---NavbarHeightSmall: calc(var(--TabsHeight) + var(--TabsBorder))  /*  Only on small layout  *//*  Default: calc(var(--TabsHeight) + var(--TabsBorder))  *//*  Default as a number: 44  */}
+:root {
+  --tab-border-radius: 4px !important;
+  /*  Tab border radius -- Changes the tabs rounding  */
+  /*  Default: 6px  */
+  --NavbarWidth: 50;
+  /*  Default values: 36 - 43  */
+  --TabsHeight: 30;
+  /*  Minimum: 30  */
+  /*  Default: 36  */
+  --TabsBorder: 10;
+  /*  Doesnt do anything on small layout  */
+  /*  Default: 8  */
+  --NavbarHeightSmall: calc(var(--TabsHeight) + var(--TabsBorder));
+  /*  Only on small layout  */
+  /*  Default: calc(var(--TabsHeight) + var(--TabsBorder))  */
+  /*  Default as a number: 44  */
+}
 
 .tabbrowser-tab {
   min-width: 120px !important;
@@ -89,42 +87,107 @@
   padding: 0 !important;
 }
 
-/*.tab-content {
-  padding: 5 !important;
-  margin: 5 !important;
-}*/
+@media screen and (min-width: 1325px)
+/* Only the tabs space will grow from here */
+  {
+  :root #nav-bar {
+    margin-top: calc(var(--TabsHeight) * -1px - var(--TabsBorder) * 1px) !important;
+    height: calc(var(--TabsHeight) * 1px + var(--TabsBorder) * 1px);
+  }
 
-@media screen and (min-width:1325px)    /*  Only the tabs space will grow from here  */
-{:root #nav-bar{margin-top: calc(var(--TabsHeight) * -1px - var(--TabsBorder) * 1px)!important; height: calc(var(--TabsHeight) * 1px + var(--TabsBorder) * 1px)} #TabsToolbar{margin-left: calc(1325px / 100 * var(--NavbarWidth)) !important} #nav-bar{margin-right: calc(100vw - calc(1325px / 100 * var(--NavbarWidth))) !important; vertical-align: center !important} #urlbar-container{min-width: 0px !important;  flex: auto !important} toolbarspring{display: none !important}}
+  #TabsToolbar {
+    margin-left: calc(1325px / 100 * var(--NavbarWidth)) !important;
+  }
 
-@media screen and (min-width:950px) and (max-width:1324px)    /*  Both the tabs space and the navbar will grow  */
-{:root #nav-bar{margin-top: calc(var(--TabsHeight) * -1px - var(--TabsBorder) * 1px) !important; height: calc(var(--TabsHeight) * 1px + var(--TabsBorder) * 1px)} #TabsToolbar{margin-left: calc(var(--NavbarWidth) * 1vw) !important} #nav-bar{margin-right: calc(100vw - calc(var(--NavbarWidth) * 1vw)) !important; vertical-align: center !important} #urlbar-container{min-width: 0px !important;  flex: auto !important} toolbarspring{display: none !important} #TabsToolbar, #nav-bar{transition: margin-top .25s !important}}
+  #nav-bar {
+    margin-right: calc(100vw - calc(1325px / 100 * var(--NavbarWidth))) !important;
+    vertical-align: center !important;
+  }
 
-@media screen and (max-width:949px)    /*  The window is not enough wide for a one line layout  */
-{:root #nav-bar{padding: 0 5px 0 5px!important; height: calc(var(--NavbarHeightSmall) * 1px) !important} toolbarspring{display: none !important;} #TabsToolbar, #nav-bar{transition: margin-top .25s !important}}
-#nav-bar, #PersonalToolbar{background-color: #0000 !important;background-image: none !important; box-shadow: none !important} #nav-bar{margin-left: 3px;} .tab-background, .tab-stack { min-height: calc(var(--TabsHeight) * 1px) !important}
+  #urlbar-container {
+    min-width: 0px !important;
+    flex: auto !important;
+  }
 
-/*  Removes urlbar border/background  
-#urlbar-background {
-  border: none !important;
-  outline: none !important;
-  transition: .15s !important;
-}*/
+  toolbarspring {
+    display: none !important;
+  }
+}
 
-/*  Removes the background from the urlbar while not in use 
-#urlbar:not(:hover):not([breakout][breakout-extend]) > #urlbar-background {
+@media screen and (min-width: 950px) and (max-width: 1324px)
+/* Both the tabs space and the navbar will grow */
+  {
+  :root #nav-bar {
+    margin-top: calc(var(--TabsHeight) * -1px - var(--TabsBorder) * 1px) !important;
+    height: calc(var(--TabsHeight) * 1px + var(--TabsBorder) * 1px);
+  }
+
+  #TabsToolbar {
+    margin-left: calc(var(--NavbarWidth) * 1vw) !important;
+  }
+
+  #nav-bar {
+    margin-right: calc(100vw - calc(var(--NavbarWidth) * 1vw)) !important;
+    vertical-align: center !important;
+  }
+
+  #urlbar-container {
+    min-width: 0px !important;
+    flex: auto !important;
+  }
+
+  toolbarspring {
+    display: none !important;
+  }
+
+  #TabsToolbar,
+  #nav-bar {
+    transition: margin-top 0.25s !important;
+  }
+}
+
+@media screen and (max-width: 949px)
+/* The window is not enough wide for a one line layout */
+  {
+  :root #nav-bar {
+    padding: 0 5px 0 5px !important;
+    height: calc(var(--NavbarHeightSmall) * 1px) !important;
+  }
+
+  toolbarspring {
+    display: none !important;
+  }
+
+  #TabsToolbar,
+  #nav-bar {
+    transition: margin-top 0.25s !important;
+  }
+}
+
+#nav-bar,
+#PersonalToolbar {
+  background-color: #0000 !important;
+  background-image: none !important;
   box-shadow: none !important;
-  background: #0000 !important;
-}*/
+}
+
+#nav-bar {
+  margin-left: 3px;
+}
+
+.tab-background,
+.tab-stack {
+  min-height: calc(var(--TabsHeight) * 1px) !important;
+}
 
 /*  Removes annoying border  */
 #navigator-toolbox {
-  border: none !important
+  border: none !important;
 }
 
 /* Fades window while not in focus */
 #navigator-toolbox-background:-moz-window-inactive {
-  filter: contrast(90%)
+  filter: contrast(90%);
 }
 
 /* Remove fullscreen warning border */
@@ -132,39 +195,6 @@
   border: none !important;
   background: -moz-Dialog !important;
 }
-
-/*  Tabs close button  
-.tabbrowser-tab:not(:hover) .tab-close-button {
-  opacity: 0% !important;
-  transition: 0.3s !important;
-  display: -moz-box !important;
-}
-.tab-close-button[selected]:not(:hover) {
-  opacity: 45% !important;
-  transition: 0.3s !important;
-  display: -moz-box !important;
-}
-.tabbrowser-tab:hover .tab-close-button {
-  opacity: 50%;
-  transition: 0.3s !important;
-  background: none !important;
-  cursor: pointer;
-  display: -moz-box !important;
-}
-.tab-close-button:hover {
-  opacity: 100% !important;
-  transition: 0.3s !important;
-  background: none !important;
-  cursor: pointer;
-  display: -moz-box !important;
-}
-.tab-close-button[selected]:hover {
-  opacity: 100% !important;
-  transition: 0.3s !important;
-  background: none !important;
-  cursor: pointer;
-  display: -moz-box !important;
-}*/
 
 /* Tabs: sekmenin yanındaki (X) tuşunu kapar */
 .tab-close-button {
@@ -177,7 +207,7 @@
 }
 
 /* url bar açıldığındaki uzunluk */
-.urlbarView{
+.urlbarView {
   position: fixed !important;
   top: inherit;
   left: 0 !important;
@@ -187,3 +217,101 @@
   background-color: var(--toolbar-field-focus-background-color, inherit);
 }
 
+/*extension menu */
+
+/*  Clean and tight extensions menu */
+#unified-extensions-panel #unified-extensions-view {
+  width: 100% !important;
+  /*  For firefox v115.x */
+}
+
+#unified-extensions-view {
+  --uei-icon-size: 22px;
+  /*  Change icon size */
+  --firefoxcss-number-of-extensions-in-a-row: 4;
+  /*  Increase to the number of icons you want in one row */
+}
+
+#unified-extensions-view .panel-header,
+#unified-extensions-view .panel-header+toolbarseparator,
+#unified-extensions-view .panel-subview-body+toolbarseparator,
+#unified-extensions-view .unified-extensions-item-menu-button.subviewbutton,
+#unified-extensions-view .unified-extensions-item-action-button .unified-extensions-item-contents {
+  display: none !important;
+}
+
+@media -moz-pref,
+("mod.hide.manage-extensions.button") {
+  #unified-extensions-view #unified-extensions-manage-extensions {
+    display: none !important;
+  }
+}
+
+@media not -moz-pref,
+("mod.hide.manage-extensions.button") {
+  #unified-extensions-manage-extensions>.toolbarbutton-text {
+    display: none !important;
+  }
+
+  #unified-extensions-manage-extensions::after {
+    content: "";
+    display: block;
+    height: 2px;
+    /* Thickness of your line */
+    width: 50%;
+    /* Or 100%, adjust as you like */
+    margin: auto;
+    background-color: light-dark(black, white);
+    /* Auto adapted color */
+    border-radius: 6px;
+    /* Rounded ends */
+    opacity: 0.2;
+  }
+
+  #unified-extensions-manage-extensions {
+    min-height: 12px !important;
+    margin-bottom: 4px !important;
+  }
+}
+
+#unified-extensions-view .unified-extensions-item .unified-extensions-item-icon,
+#unified-extensions-view .unified-extensions-item .toolbarbutton-badge-stack {
+  margin-inline-end: 0px !important;
+}
+
+#unified-extensions-view .panel-subview-body {
+  padding: 4px !important;
+}
+
+#unified-extensions-view:is(panelview, #widget-overflow-fixed-list) .toolbaritem-combined-buttons {
+  margin: 2px !important;
+}
+
+#unified-extensions-view .unified-extensions-item .unified-extensions-item-action-button {
+  padding: 6px !important;
+}
+
+#unified-extensions-view #overflowed-extensions-list,
+#unified-extensions-view #unified-extensions-area,
+#unified-extensions-view .unified-extensions-list {
+  display: grid !important;
+  grid-template-columns: repeat(var(--firefoxcss-number-of-extensions-in-a-row),
+      auto);
+  justify-items: left !important;
+  align-items: left !important;
+}
+
+#unified-extensions-view .unified-extensions-list .unified-extensions-item,
+#unified-extensions-view .unified-extensions-list {
+  max-width: max-content;
+}
+
+@media not -moz-pref("mod.disable.extensions-menu.separator") {
+  @media not -moz-pref("mod.hide.faded-extensions.inside.extensions-menu") {
+    #unified-extensions-view #unified-extensions-area:has(+ .unified-extensions-list .unified-extensions-item) {
+      padding-bottom: 6px !important;
+      margin-bottom: 2px !important;
+      border-bottom: 1px solid #aeaeae33 !important;
+    }
+  }
+}
